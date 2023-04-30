@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block herencia %}
+  
+<form action="{% url 'articulo_formulario' %}" method="POST">{% csrf_token %}
+
+    {{miFormulario.as_table}}
+
+    <button type="submit"> Enviar </button>
+
+  </form>  
+
+
+{% endblock herencia %}

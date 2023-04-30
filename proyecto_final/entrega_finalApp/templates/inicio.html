@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block herencia %}
+  <h4>{{ mensaje }}</h4>
+  {% for fields_error in miform.errors.values %}
+    {% for error in fields_error %}
+      <li>{{ error }}</li>
+    {% endfor %}
+  {% endfor %}
+
+  <header class="bs-primary" style="background-color: #13356d; py-5">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-8 col-lg-6 text-center">
+          <h1 class="display-4 text-white mb-3" style="text-shadow: 2px 2px 4px #000000; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #ffffff;">E-tienda Salta</h1>
+          <p class="lead text-white mb-4" style="text-shadow: 1px 1px 2px #000000;">Todo lo que buscas para tu casa</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Types of articulos  -->
+  <section id="menu" class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Centro de mesas</h2>
+              <p class="card-text">Flores de tela para armar tu centro de mesa.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Individuales de yute</h2>
+              <p class="card-text">Individuales de yute para tu mesa principal.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Manteles</h2>
+              <p class="card-text">Manteles pintados para tu mesa principal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services section -->
+  <section class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Articulos de calidad</h2>
+              <p class="card-text">Articulos artesanales de la mejor calidad.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Articulos personalizado</h2>
+              <p class="card-text">Tenemos en cuenta la necesidad de cada uno de nuestros clientes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title">Personal capacitado</h2>
+              <p class="card-text">Nuestro equipo tien vasta experiencia siendo el mejor del mercado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

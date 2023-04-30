@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block herencia %}
+
+<header class="bs-primary" style="background-color: #025e6e; py-5">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-8 col-lg-6 text-center">
+        <h1 class="display-6 text-white mb-3" style="text-shadow: 2px 2px 4px #000000; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #ffffff;">Ingresar Empleado</h1>
+        <p class="lead text-white mb-4" style="text-shadow: 1px 1px 2px #000000;"></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+  
+<form action="{% url 'empleado_formulario' %}" method="POST">{% csrf_token %}
+
+  <table>
+    <tr>
+      <th><label for="{{ miFormulario.nombre.id_for_label }}">Nombre:</label></th>
+      <td>{{ miFormulario.nombre }}</td>
+    </tr>
+    <tr>
+      <th><label for="{{ miFormulario.apellido.id_for_label }}">Apellido:</label></th>
+      <td>{{ miFormulario.apellido }}</td>
+    </tr>
+    <tr>
+      <th><label for="{{ miFormulario.cargo.id_for_label }}">Cargo:</label></th>
+      <td>{{ miFormulario.cargo }}</td>
+    </tr>
+       </table>
+
+    <button type="submit"> Enviar </button>
+
+  </form>  
+
+
+{% endblock herencia %}

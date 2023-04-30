@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block herencia %}
+  
+  <p>Buscando el cliente: {{nombre}}</p>
+
+  
+  {% if cliente %}
+    <ul>
+      {% for cli in cliente %}
+        <li>
+          {{cli.apellido}} - {{cli.nombre}}
+        </li>
+      {% endfor %}
+    </ul>
+    
+  {% else %}
+
+    <p>No se encontró ningun cliente {{nombre}}</p>
+
+  {% endif %}
+    
+
+{% endblock herencia %}
+  

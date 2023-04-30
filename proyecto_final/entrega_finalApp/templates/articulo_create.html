@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block herencia %}
+  
+<form action="{% url 'articulo_create' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td><label for="{{ form.nombre.id_for_label }}">Nombre:</label></td>
+      <td>{{ form.nombre }}</td>
+    </tr>
+    <tr>
+      <td><label for="{{ form.color.id_for_label }}">Color:</label></td>
+      <td>{{ form.color }}</td>
+    </tr>
+    <tr>
+      <td><label for="{{ form.dimencion.id_for_label }}">Dimención:</label></td>
+      <td>{{ form.dimencion }}</td>
+    </tr>
+    <tr>
+      <td><label for="{{ form.cantidad.id_for_label }}">Cantidad:</label></td>
+      <td>{{ form.cantidad }}</td>
+    </tr>
+    <tr>
+      <td><label for="{{ form.imagen.id_for_label }}">Imagen:</label></td>
+      <td>{{ form.imagen }}</td>
+    </tr>
+  </table>
+  <button type="submit">Enviar</button>
+</form>
+
+
+{% endblock herencia %}

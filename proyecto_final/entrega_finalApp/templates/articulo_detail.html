@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block herencia %}
+
+<header class="bs-primary" style="background-color: #025e6e; py-5">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-8 col-lg-6 text-center">
+          <h1 class="display-6 text-white mb-3" style="text-shadow: 2px 2px 4px #000000; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #ffffff;"> Detalles</h1>
+          <p class="lead text-white mb-4" style="text-shadow: 1px 1px 2px #000000;"></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+<head>
+    <link href="{% static 'css/estilos.css' %}" rel="stylesheet" />
+
+</head>
+  
+
+  <div class="container">
+    <div class="info">
+      <p><strong>Nombre:</strong> {{ articulo_det.nombre }}</p>
+      <p><strong>Color:</strong> {{ articulo_det.color }}</p>
+      <p><strong>Dimención:</strong> {{ articulo_det.dimencion }}</p>
+      <p><strong>Cantidad disponible:</strong> {{ articulo_det.cantidad }} UN</p>
+    </div>
+    <div class="Imagen">
+      {% if articulo_det.imagen %}
+        <img src="{{ articulo_det.imagen.url }}" alt="Imagen del articulo {{ articulo_det.nombre }}">
+      {% endif %}
+    </div>
+  </div>
+  
+
+
+{% endblock herencia %}

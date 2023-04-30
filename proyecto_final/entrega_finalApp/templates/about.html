@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block herencia %}
+  
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{{ image_url }}" alt="Foto de Humberto Cánepa" class="img-fluid rounded-circle">
+            </div>
+            <div class="col-md-8">
+                <h1 class="mb-4">{{ title }}</h1>
+                <p>{{ texto }}</p>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock herencia %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block herencia %}
+  
+<form method="POST">{% csrf_token %}
+
+    <p>El articulo se eliminara, desea continuar?</p>
+
+    <button type="submit"> Confirmar </button>
+    <button><a href="{% url 'inicio' %}"> Cancelar </a></button>
+
+  </form>
+
+
+{% endblock herencia %}

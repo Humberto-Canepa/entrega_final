@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block herencia %}
+  
+<header class="bs-primary" style="background-color: #025e6e; py-5">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-8 col-lg-6 text-center">
+        <h1 class="display-6 text-white mb-3" style="text-shadow: 2px 2px 4px #000000; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #ffffff;">Editar Perfil</h1>
+        <p class="lead text-white mb-4" style="text-shadow: 1px 1px 2px #000000;"></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+<form method="POST">{% csrf_token %}
+
+  <table>
+
+    <tr>
+      <th><label for="{{ miform.first_name.id_for_label }}">Nombre:</label></th>
+      <td>{{ miform.first_name }}</td>
+    </tr>
+    <tr>
+      <th><label for="{{ miform.last_name.id_for_label }}">Apellido:</label></th>
+      <td>{{ miform.last_name }}</td>
+    </tr>
+    <tr>
+      <th><label for="{{ miform.email.id_for_label }}">Email:</label></th>
+      <td>{{ miform.email }}</td>
+    </tr>
+    <tr>
+      <th><label for="{{ miform.password1.id_for_label }}">Contraseña:</label></th>
+      <td>{{ miform.password1 }}</td>
+    </tr>
+    <tr>
+      <th><label for="{{ miform.password2.id_for_label }}">Confirmar Contraseña:</label></th>
+      <td>{{ miform.password2 }}</td>
+    </tr>
+  </table>
+  
+
+    <input type="submit" value="Actualizar">
+
+  </form>
+
+
+{% endblock herencia %}
+  
